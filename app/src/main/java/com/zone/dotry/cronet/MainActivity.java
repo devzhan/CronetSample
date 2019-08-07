@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import org.chromium.net.CronetEngine;
+
 public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
@@ -19,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
-        http://hanpfei.github.io/2016/11/11/lazy-chromium-net-android-porting-guide/
+        CronetEngine.Builder builder = new CronetEngine.Builder(this);
+        CronetEngine cronetEngine = builder.build();
+
     }
 
     /**
